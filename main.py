@@ -1,14 +1,13 @@
-#Ejercicio 1: Verificación de números pares e impares
+#Ejercicio 2: Calificación de una nota
 
-#Escribe un programa que verifique si un número es par o impar utilizando if .
-
+#Escribe un programa que determine si una nota numérica es "Aprobado" o "Reprobado" usando if.
 
 #Enunciado:
-#Solicita al usuario que ingrese un número y verifica si es par o impar.
+#Solicita al usuario una calificación y determina si la nota es aprobatoria (>= 60) o reprobatoria (<60).
 
-numero = int(input("ingrese el numero: "))
-if numero % 2 == 1:
-    print(f"Par")
-else:
-    print(f"Impar") 
-    1
+
+Nota = int(input("Ingrese la nota: "))
+if Nota >=60:
+    print(f"Aprobado")
+else: 
+    print(f"Reprobado")
