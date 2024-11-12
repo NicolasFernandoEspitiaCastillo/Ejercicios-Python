@@ -1,42 +1,21 @@
-#Ejercicio 3: Calculadora básica
+#Ejercicio 4: Determinación del tipo de triángulo
 
-#Utiliza match para implementar una calculadora simple.
+#Escribe un programa que determine el tipo de triángulo en función de sus lados usando if .
 
 #Enunciado:
-#Crea una calculadora que solicite dos números y una operación matemática (+, -, *, /). Usa match
-#para realizar la operación correspondiente.
 
-def calculadora():
-      
-      #ingrese los numeros:
-      num1 =float(input("Ingrese el primer numero: "))
-      num2 =float(input("Ingrese el segundo numero: "))
-      
-      #operacion que desea realizar:
-      Operacion = input("Ingrese la operacion a realizar (+, -, *, /): ")
-      
-      match Operacion:
-          
-          case "+":
-            resultado = num1 + num2
-            print(f"{num1} + {num2} = {resultado}")
-          case "-":
-            resultado = num1 - num2 
-            print(f"{num1} - {num2} = {resultado}") 
-          case "*":
-            print(f"{num1} * {num2} = {resultado}")
-          case "/":
-            if num2 == 0:
-               print("Error: no se puede divir por cero")
-               return
-            else: 
-               print(f"{num1} / {num2} = {resultado}")
-          case _:
-            print("Operación no válida. Por favor, elige una operación entre +, -, *, /.")
-            return  # Salir de la función si la operación no es válida
+#Solicita al usuario que ingrese las longitudes de los tres lados de un triángulo. Determina si el
+#triángulo es equilátero, isósceles o escaleno.
 
+# Solicitar las longitudes de los tres lados del triángulo
+lado1 = float(input("Ingresa el primer lado del triángulo: "))
+lado2 = float(input("Ingresa el segundo lado del triángulo: "))
+lado3 = float(input("Ingresa el tercer lado del triángulo: "))
 
-calculadora()
-
-
-
+# Determinar el tipo de triángulo
+if lado1 == lado2 == lado3:
+    print("El triángulo es equilátero.")
+elif lado1 == lado2 or lado2 == lado3 or lado1 == lado3:
+    print("El triángulo es isósceles.")
+else:
+    print("El triángulo es escaleno.")
