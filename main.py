@@ -1,15 +1,27 @@
-#Ejercicio 4: Números pares en un rango
-#Enunciado:
-#Escribe un programa que solicite al usuario dos números enteros, un valor de inicio y un valor de
-#fin. El programa debe imprimir todos los números pares en ese rango, incluyendo los límites. Usa
-#un ciclo for para recorrer el rango.
+#Ejercicio 6: Adivina el número (con while )
+#Enunciado: (random.randint(1, 100))
+#Escribe un programa que genere un número aleatorio entre 1 y 100 y permita al usuario
+#adivinarlo. El programa debe dar pistas si el número ingresado es mayor o menor que el número
+#secreto. Usa un ciclo while para permitir al usuario seguir intentando hasta que adivine el
+#número
 
+import random
 
-# Solicitar al usuario los dos números enteros (inicio y fin)
-inicio = int(input("Introduce el valor de inicio: "))
-fin = int(input("Introduce el valor de fin: "))
+# Generar un número aleatorio entre 1 y 100
+numero_secreto = random.randint(1, 100)
 
-# Usar un ciclo for para recorrer el rango de números
-for num in range(inicio, fin + 1):  # range(inicio, fin+1) incluye el valor de fin
-    if num % 2 == 0:  # Verificamos si el número es par
-        print(num)
+# Inicializar la variable que almacenará el intento del usuario
+intento = None
+
+# Usar un ciclo while para seguir pidiendo al usuario hasta que adivine el número
+while intento != numero_secreto:
+    # Solicitar al usuario que ingrese un número
+    intento = int(input("Adivina el número (entre 1 y 100): "))
+    
+    # Dar pistas si el número ingresado es mayor o menor que el número secreto
+    if intento < numero_secreto:
+        print("El número secreto es mayor. Intenta nuevamente.")
+    elif intento > numero_secreto:
+        print("El número secreto es menor. Intenta nuevamente.")
+    else:
+        print(f"¡Felicidades! Has adivinado el número {numero_secreto}.")
