@@ -1,16 +1,15 @@
-#Ejercicio 7: Número positivo, negativo o cero
-#Escribe un programa que determine si un número es positivo, negativo o cero usando if .
+#Ejercicio 8: Determinación de año bisiesto
+#Escribe un programa que determine si un año es bisiesto o no.
 #Enunciado:
-#Solicita al usuario que ingrese un número y determina si es positivo, negativo o cero.
+#Solicita al usuario que ingrese un año y determina si es bisiesto (divisible entre 4, pero no entre
+#100, salvo que sea divisible entre 400).
 
 
-# Solicitar al usuario que ingrese un número
-numero = float(input("Introduce un número: "))
+# Solicitar al usuario que ingrese un año
+año = int(input("Introduce un año: "))
 
-# Determinar si el número es positivo, negativo o cero
-if numero > 0:
-    print("El número es positivo.")
-elif numero < 0:
-    print("El número es negativo.")
+# Determinar si el año es bisiesto
+if (año % 4 == 0 and año % 100 != 0) or (año % 400 == 0):
+    print(f"El año {año} es bisiesto.")
 else:
-    print("El número es cero.")
+    print(f"El año {año} no es bisiesto.")
