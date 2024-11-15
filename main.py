@@ -1,29 +1,32 @@
-#Ejercicio 18: Sistema de evaluación de créditos universitarios
-#Escribe un programa que calcule el número de créditos totales de un estudiante en base a las
-#materias cursadas y el puntaje obtenido en cada una. El puntaje debe ser evaluado como
-#aprobado o no aprobado.
+#Ejercicio 20: Conversión de calificaciones numéricas a letras
+#Escribe un programa que convierta una calificación numérica en una letra de acuerdo a un
+#sistema de calificación específico, usando match .
 #Enunciado:
-#Solicita al usuario ingresar el número de materias que ha cursado. Para cada materia, solicita el
-#puntaje y determina si ha aprobado o no (>= 60). Luego, calcula el número total de créditos del
-#estudiante (cada materia aprobada otorga 3 créditos).
+#Solicita una calificación numérica (0-100) y convierte esa calificación a una letra usando el
+#siguiente esquema:
+#A: 90-100
+#B: 80-89
+#C: 70-79
+#D: 60-69
+#F: 0-59
 
 
-# Solicitar el número de materias cursadas
-num_materias = int(input("¿Cuántas materias has cursado? "))
 
-# Inicializar el contador de créditos
-creditos_totales = 0
+# Solicitar la calificación numérica
+calificacion = int(input("Introduce la calificación numérica (0-100): "))
 
-# Iterar sobre cada materia
-for i in range(num_materias):
-    puntaje = float(input(f"Introduce el puntaje de la materia {i+1}: "))
-    
-    # Verificar si el puntaje es aprobado (mayor o igual a 60)
-    if puntaje >= 60:
-        creditos_totales += 3  # Cada materia aprobada otorga 3 créditos
-        print(f"Materia {i+1}: Aprobado. Créditos ganados: 3")
-    else:
-        print(f"Materia {i+1}: No aprobado. Créditos ganados: 0")
+# Usar match para convertir la calificación numérica a una letra
+match calificacion:
+    case calificacion if 90 <= calificacion <= 100:
+        letra = "A"
+    case calificacion if 80 <= calificacion <= 89:
+        letra = "B"
+    case calificacion if 70 <= calificacion <= 79:
+        letra = "C"
+    case calificacion if 60 <= calificacion <= 69:
+        letra = "D"
+    case _:
+        letra = "F"
 
-# Mostrar el total de créditos obtenidos
-print(f"\nTotal de créditos obtenidos: {creditos_totales}")
+# Mostrar la calificación en letra
+print(f"La calificación en letra es: {letra}")
