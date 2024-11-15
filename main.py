@@ -1,23 +1,15 @@
-#Ejercicio 3: Factorial de un número
+#Ejercicio 4: Números pares en un rango
 #Enunciado:
-#Escribe un programa que solicite al usuario un número entero positivo n y calcule el factorial de
-#dicho número ( n! = 1 * 2 * 3 * ... * n ). Usa un ciclo for para realizar el cálculo.
+#Escribe un programa que solicite al usuario dos números enteros, un valor de inicio y un valor de
+#fin. El programa debe imprimir todos los números pares en ese rango, incluyendo los límites. Usa
+#un ciclo for para recorrer el rango.
 
 
+# Solicitar al usuario los dos números enteros (inicio y fin)
+inicio = int(input("Introduce el valor de inicio: "))
+fin = int(input("Introduce el valor de fin: "))
 
-# Solicitar al usuario el número entero positivo n
-n = int(input("Introduce un número entero positivo: "))
-
-# Verificar que el número sea positivo
-if n < 0:
-    print("Por favor, introduce un número entero positivo mayor o igual a 0.")
-else:
-    # Inicializar el resultado en 1 (ya que el factorial de 0 es 1)
-    factorial = 1
-    
-    # Usar un ciclo for para calcular el factorial
-    for i in range(1, n + 1):
-        factorial *= i  # Multiplicamos el resultado por cada número de 1 a n
-    
-    # Mostrar el resultado
-    print(f"El factorial de {n} es: {factorial}")
+# Usar un ciclo for para recorrer el rango de números
+for num in range(inicio, fin + 1):  # range(inicio, fin+1) incluye el valor de fin
+    if num % 2 == 0:  # Verificamos si el número es par
+        print(num)
