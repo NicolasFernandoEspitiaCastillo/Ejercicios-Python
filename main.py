@@ -1,32 +1,29 @@
-#Ejercicio 20: Conversión de calificaciones numéricas a letras
-#Escribe un programa que convierta una calificación numérica en una letra de acuerdo a un
-#sistema de calificación específico, usando match .
+#Ejercicio 21: Sistema de estacionamiento con tarifas
+#progresivas
+#Escribe un programa que calcule el costo de estacionamiento basado en el número de horas, con
+#tarifas progresivas.
 #Enunciado:
-#Solicita una calificación numérica (0-100) y convierte esa calificación a una letra usando el
-#siguiente esquema:
-#A: 90-100
-#B: 80-89
-#C: 70-79
-#D: 60-69
-#F: 0-59
+#El costo de estacionamiento se calcula de la siguiente manera:
+#Primera hora: $5
+#Segunda a cuarta hora: $4 por hora
+#Más de cuatro horas: $3 por cada hora adicional
+#Solicita al usuario el número de horas de estacionamiento y calcula el costo total.
 
 
 
-# Solicitar la calificación numérica
-calificacion = int(input("Introduce la calificación numérica (0-100): "))
+# Solicitar el número de horas de estacionamiento
+horas = int(input("Introduce el número de horas de estacionamiento: "))
 
-# Usar match para convertir la calificación numérica a una letra
-match calificacion:
-    case calificacion if 90 <= calificacion <= 100:
-        letra = "A"
-    case calificacion if 80 <= calificacion <= 89:
-        letra = "B"
-    case calificacion if 70 <= calificacion <= 79:
-        letra = "C"
-    case calificacion if 60 <= calificacion <= 69:
-        letra = "D"
-    case _:
-        letra = "F"
+# Inicializar el costo
+costo_total = 0
 
-# Mostrar la calificación en letra
-print(f"La calificación en letra es: {letra}")
+# Calcular el costo basado en las tarifas progresivas
+if horas <= 1:
+    costo_total = 5  # Primera hora
+elif 2 <= horas <= 4:
+    costo_total = 5 + (horas - 1) * 4  # Primera hora + 2 a 4 horas
+else:
+    costo_total = 5 + 3 * 4 + (horas - 4) * 3  # Primera hora + 2 a 4 horas + más de 4 horas
+
+# Mostrar el costo total
+print(f"El costo total de estacionamiento es: ${costo_total}")
