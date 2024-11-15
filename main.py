@@ -1,21 +1,23 @@
-#Ejercicio 13: Comparación de tres números
-#Escribe un programa que determine el mayor de tres números usando if .
+#Ejercicio 14: Adivinanza de letras
+#Escribe un programa que permita al usuario adivinar una letra secreta usando match .
 #Enunciado:
-#Solicita al usuario que ingrese tres números y determina cuál es el mayor.
+#El programa contiene una letra secreta (por ejemplo, "A"). El usuario debe adivinar la letra, y el
+#programa le indicará si acertó o no.
 
 
-# Solicitar tres números al usuario
-numero1 = float(input("Introduce el primer número: "))
-numero2 = float(input("Introduce el segundo número: "))
-numero3 = float(input("Introduce el tercer número: "))
+# Definir la letra secreta
+letra_secreta = 'A'
 
-# Determinar el mayor de los tres números usando if-elif-else
-if numero1 >= numero2 and numero1 >= numero3:
-    mayor = numero1
-elif numero2 >= numero1 and numero2 >= numero3:
-    mayor = numero2
-else:
-    mayor = numero3
+# Solicitar al usuario que adivine la letra
+letra_adivinada = input("Adivina la letra secreta: ").upper()  # Convertir la entrada a mayúsculas
 
-# Mostrar el resultado
-print(f"El mayor de los tres números es: {mayor}")
+# Usar match para comparar la letra adivinada con la letra secreta
+match letra_adivinada:
+    case 'A':
+        print("¡Felicidades! Has adivinado la letra secreta.")
+    case 'B':
+        print("¡Lo intentaste con 'B'!")
+    case _:
+        print("¡Intenta de nuevo! No acertaste la letra secreta.")
+
+
