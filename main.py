@@ -1,19 +1,20 @@
-#Ejercicio 9: Clasificación de edades
-#Escribe un programa que clasifique a una persona en función de su edad.
+#Ejercicio 10: Clasificación de notas
+#Escribe un programa que asigne una calificación basada en una nota numérica.
 #Enunciado:
-#Solicita la edad de la persona e indica si es niño (0-12 años), adolescente (13-17 años), adulto (18-
-#64 años) o anciano (65 años o más).
+#Solicita una nota numérica y clasifícala como A (90-100), B (80-89), C (70-79), D (60-69), o F (<60).
 
 
-# Solicitar la edad de la persona
-edad = int(input("Introduce tu edad: "))
+# Solicitar la nota numérica
+nota = float(input("Introduce la nota numérica: "))
 
-# Clasificar la persona según su edad
-if 0 <= edad <= 12:
-    print("Eres un niño.")
-elif 13 <= edad <= 17:
-    print("Eres un adolescente.")
-elif 18 <= edad <= 64:
-    print("Eres un adulto.")
+# Clasificar la nota en calificaciones
+if 90 <= nota <= 100:
+    print("Calificación: A")
+elif 80 <= nota < 90:
+    print("Calificación: B")
+elif 70 <= nota < 80:
+    print("Calificación: C")
+elif 60 <= nota < 70:
+    print("Calificación: D")
 else:
-    print("Eres un anciano.")
+    print("Calificación: F")
