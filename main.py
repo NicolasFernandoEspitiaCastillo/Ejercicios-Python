@@ -1,27 +1,25 @@
-#Ejercicio 6: Adivina el número (con while )
-#Enunciado: (random.randint(1, 100))
-#Escribe un programa que genere un número aleatorio entre 1 y 100 y permita al usuario
-#adivinarlo. El programa debe dar pistas si el número ingresado es mayor o menor que el número
-#secreto. Usa un ciclo while para permitir al usuario seguir intentando hasta que adivine el
-#número
+#Ejercicio 7: Suma de números pares hasta que se introduce
+#un impar
+#Enunciado:
+#Escribe un programa que solicite al usuario ingresar números enteros indefinidamente. El
+#programa debe sumar los números siempre que sean pares, pero debe detenerse si el usuario
+#ingresa un número impar. Usa un ciclo while para lograr esto.
 
-import random
 
-# Generar un número aleatorio entre 1 y 100
-numero_secreto = random.randint(1, 100)
+# Inicializar la suma en 0
+suma_pares = 0
 
-# Inicializar la variable que almacenará el intento del usuario
-intento = None
-
-# Usar un ciclo while para seguir pidiendo al usuario hasta que adivine el número
-while intento != numero_secreto:
+# Usar un ciclo while para ingresar números indefinidamente
+while True:
     # Solicitar al usuario que ingrese un número
-    intento = int(input("Adivina el número (entre 1 y 100): "))
+    numero = int(input("Introduce un número entero (o un impar para detener): "))
     
-    # Dar pistas si el número ingresado es mayor o menor que el número secreto
-    if intento < numero_secreto:
-        print("El número secreto es mayor. Intenta nuevamente.")
-    elif intento > numero_secreto:
-        print("El número secreto es menor. Intenta nuevamente.")
+    # Verificar si el número es impar
+    if numero % 2 != 0:
+        print("Has ingresado un número impar. El programa se detiene.")
+        break  # Detener el ciclo si el número es impar
     else:
-        print(f"¡Felicidades! Has adivinado el número {numero_secreto}.")
+        suma_pares += numero  # Sumar el número si es par
+
+# Mostrar la suma de los números pares
+print(f"La suma de los números pares ingresados es: {suma_pares}")
