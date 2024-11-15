@@ -1,20 +1,23 @@
-#Ejercicio 10: Clasificación de notas
-#Escribe un programa que asigne una calificación basada en una nota numérica.
+#Ejercicio 11: Conversión de temperaturas
+#Escribe un programa que convierta grados Celsius a Fahrenheit o Fahrenheit a Celsius usando
+#match .
 #Enunciado:
-#Solicita una nota numérica y clasifícala como A (90-100), B (80-89), C (70-79), D (60-69), o F (<60).
+#Solicita al usuario que ingrese una temperatura y una escala (C o F). Convierte la temperatura a la
+#escala opuesta usando match .
 
+# Solicitar la temperatura y la escala al usuario
+temperatura = float(input("Introduce la temperatura: "))
+escala = input("Introduce la escala (C para Celsius, F para Fahrenheit): ").upper()
 
-# Solicitar la nota numérica
-nota = float(input("Introduce la nota numérica: "))
-
-# Clasificar la nota en calificaciones
-if 90 <= nota <= 100:
-    print("Calificación: A")
-elif 80 <= nota < 90:
-    print("Calificación: B")
-elif 70 <= nota < 80:
-    print("Calificación: C")
-elif 60 <= nota < 70:
-    print("Calificación: D")
-else:
-    print("Calificación: F")
+# Usar match para realizar la conversión según la escala proporcionada
+match escala:
+    case 'C':
+        # Convertir de Celsius a Fahrenheit
+        fahrenheit = (temperatura * 9/5) + 32
+        print(f"{temperatura} grados Celsius equivalen a {fahrenheit} grados Fahrenheit.")
+    case 'F':
+        # Convertir de Fahrenheit a Celsius
+        celsius = (temperatura - 32) * 5/9
+        print(f"{temperatura} grados Fahrenheit equivalen a {celsius} grados Celsius.")
+    case _:
+        print("Escala no válida. Por favor, ingresa 'C' para Celsius o 'F' para Fahrenheit.")
