@@ -1,21 +1,28 @@
-#Ejercicio 4: Determinación del tipo de triángulo
-
-#Escribe un programa que determine el tipo de triángulo en función de sus lados usando if .
+#Ejercicio 5: Días de la semana
+#Escribe un programa que, dado un número del 1 al 7, imprima el día correspondiente de la
+#semana usando match .
 
 #Enunciado:
+#Solicita al usuario un número del 1 al 7 y muestra el día de la semana correspondiente (1 = Lunes, 7 = Domingo).
 
-#Solicita al usuario que ingrese las longitudes de los tres lados de un triángulo. Determina si el
-#triángulo es equilátero, isósceles o escaleno.
+# Solicitar al usuario un número del 1 al 7
+numero = int(input("Introduce un número del 1 al 7: "))
 
-# Solicitar las longitudes de los tres lados del triángulo
-lado1 = float(input("Ingresa el primer lado del triángulo: "))
-lado2 = float(input("Ingresa el segundo lado del triángulo: "))
-lado3 = float(input("Ingresa el tercer lado del triángulo: "))
-
-# Determinar el tipo de triángulo
-if lado1 == lado2 == lado3:
-    print("El triángulo es equilátero.")
-elif lado1 == lado2 or lado2 == lado3 or lado1 == lado3:
-    print("El triángulo es isósceles.")
-else:
-    print("El triángulo es escaleno.")
+# Usar match para determinar el día de la semana
+match numero:
+    case 1:
+        print("Lunes")
+    case 2:
+        print("Martes")
+    case 3:
+        print("Miércoles")
+    case 4:
+        print("Jueves")
+    case 5:
+        print("Viernes")
+    case 6:
+        print("Sábado")
+    case 7:
+        print("Domingo")
+    case _:
+        print("Número inválido, por favor ingresa un número entre 1 y 7.")
