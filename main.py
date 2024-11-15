@@ -1,31 +1,16 @@
-#Ejercicio 6: Juego de adivinanza de números
-#Escribe un programa que implemente un juego de adivinanza de números.
+#Ejercicio 7: Número positivo, negativo o cero
+#Escribe un programa que determine si un número es positivo, negativo o cero usando if .
 #Enunciado:
-#El programa genera un número aleatorio entre 1 y 10. El usuario debe adivinar el número, y el
-#programa indica si el número ingresado es mayor, menor o igual al número generado.
+#Solicita al usuario que ingrese un número y determina si es positivo, negativo o cero.
 
-import random
 
-# Generar un número aleatorio entre 1 y 10
-numero_aleatorio = random.randint(1, 10)
+# Solicitar al usuario que ingrese un número
+numero = float(input("Introduce un número: "))
 
-# Variable para controlar si el usuario adivinó correctamente
-adivinado = False
-
-# Iniciar el juego
-print("¡Bienvenido al juego de adivinanza de números!")
-print("Estoy pensando en un número entre 1 y 10. ¡Intenta adivinarlo!")
-
-# Bucle hasta que el usuario adivine el número
-while not adivinado:
-    # Solicitar al usuario que ingrese un número
-    intento = int(input("Introduce tu número: "))
-    
-    # Comparar el intento del usuario con el número aleatorio
-    if intento < numero_aleatorio:
-        print("El número es mayor. Intenta de nuevo.")
-    elif intento > numero_aleatorio:
-        print("El número es menor. Intenta de nuevo.")
-    else:
-        print(f"¡Felicidades! Has adivinado el número {numero_aleatorio}.")
-        adivinado = True
+# Determinar si el número es positivo, negativo o cero
+if numero > 0:
+    print("El número es positivo.")
+elif numero < 0:
+    print("El número es negativo.")
+else:
+    print("El número es cero.")
