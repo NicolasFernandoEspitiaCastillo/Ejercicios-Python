@@ -1,28 +1,26 @@
-#Ejercicio 15: Cálculo del salario neto
-#Escribe un programa que calcule el salario neto de un empleado después de aplicar impuestos.
+#Ejercicio 16: Cálculo del tiempo de viaje
+#Escribe un programa que calcule el tiempo que tarda en llegar un automóvil a su destino.
 #Enunciado:
-#Solicita al usuario su salario bruto y su país de residencia. Calcula el salario neto aplicando
-#impuestos: el 20% para residentes de "País A", el 15% para "País B" y el 10% para "País C". Si el
-#país no está en la lista, aplica un 25% de impuestos.
+#Solicita al usuario la distancia a recorrer (en km) y la velocidad promedio del automóvil (en km/h).
+#Calcula el tiempo de viaje en horas y minutos. Si la velocidad es mayor a 120 km/h, muestra un
+#mensaje de advertencia.
 
 
-# Solicitar el salario bruto y el país de residencia
-salario_bruto = float(input("Introduce tu salario bruto: "))
-pais = input("Introduce tu país de residencia: ").strip().title()  # Limpiar espacios y capitalizar el nombre del país
 
-# Determinar el porcentaje de impuestos según el país
-if pais == "País A":
-    porcentaje_impuesto = 0.20
-elif pais == "País B":
-    porcentaje_impuesto = 0.15
-elif pais == "País C":
-    porcentaje_impuesto = 0.10
-else:
-    porcentaje_impuesto = 0.25  # Para países no listados, aplicar el 25% de impuestos
+# Solicitar la distancia a recorrer y la velocidad promedio
+distancia = float(input("Introduce la distancia a recorrer (en km): "))
+velocidad = float(input("Introduce la velocidad promedio (en km/h): "))
 
-# Calcular el salario neto
-impuesto = salario_bruto * porcentaje_impuesto
-salario_neto = salario_bruto - impuesto
+# Calcular el tiempo de viaje en horas
+tiempo_horas = distancia / velocidad
 
-# Mostrar el salario neto
-print(f"Tu salario neto después de impuestos es: {salario_neto:.2f} unidades monetarias.")
+# Convertir la parte decimal de las horas a minutos
+horas = int(tiempo_horas)
+minutos = int((tiempo_horas - horas) * 60)
+
+# Mostrar advertencia si la velocidad es mayor a 120 km/h
+if velocidad > 120:
+    print("Advertencia: La velocidad es mayor a 120 km/h. ¡Conduce con precaución!")
+
+# Mostrar el tiempo de viaje en horas y minutos
+print(f"El tiempo de viaje es {horas} horas y {minutos} minutos.")
