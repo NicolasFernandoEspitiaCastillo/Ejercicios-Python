@@ -1,15 +1,19 @@
-#Ejercicio 8: Determinación de año bisiesto
-#Escribe un programa que determine si un año es bisiesto o no.
+#Ejercicio 9: Clasificación de edades
+#Escribe un programa que clasifique a una persona en función de su edad.
 #Enunciado:
-#Solicita al usuario que ingrese un año y determina si es bisiesto (divisible entre 4, pero no entre
-#100, salvo que sea divisible entre 400).
+#Solicita la edad de la persona e indica si es niño (0-12 años), adolescente (13-17 años), adulto (18-
+#64 años) o anciano (65 años o más).
 
 
-# Solicitar al usuario que ingrese un año
-año = int(input("Introduce un año: "))
+# Solicitar la edad de la persona
+edad = int(input("Introduce tu edad: "))
 
-# Determinar si el año es bisiesto
-if (año % 4 == 0 and año % 100 != 0) or (año % 400 == 0):
-    print(f"El año {año} es bisiesto.")
+# Clasificar la persona según su edad
+if 0 <= edad <= 12:
+    print("Eres un niño.")
+elif 13 <= edad <= 17:
+    print("Eres un adolescente.")
+elif 18 <= edad <= 64:
+    print("Eres un adulto.")
 else:
-    print(f"El año {año} no es bisiesto.")
+    print("Eres un anciano.")
