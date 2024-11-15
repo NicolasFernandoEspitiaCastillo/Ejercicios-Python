@@ -1,29 +1,27 @@
-#Ejercicio 21: Sistema de estacionamiento con tarifas
-#progresivas
-#Escribe un programa que calcule el costo de estacionamiento basado en el número de horas, con
-#tarifas progresivas.
+#Ejercicio 22: Clasificación de triángulos por sus ángulos
+#Escribe un programa que clasifique un triángulo en agudo, obtuso o rectángulo según sus ángulos
+#internos usando if .
 #Enunciado:
-#El costo de estacionamiento se calcula de la siguiente manera:
-#Primera hora: $5
-#Segunda a cuarta hora: $4 por hora
-#Más de cuatro horas: $3 por cada hora adicional
-#Solicita al usuario el número de horas de estacionamiento y calcula el costo total.
+#Solicita al usuario los tres ángulos de un triángulo y clasifícalo en:
+#Agudo: Todos los ángulos son menores a 90°.
+#Rectángulo: Un ángulo es exactamente 90°.
+#Obtuso: Un ángulo es mayor a 90°.
 
 
 
-# Solicitar el número de horas de estacionamiento
-horas = int(input("Introduce el número de horas de estacionamiento: "))
+# Solicitar los tres ángulos del triángulo
+angulo1 = float(input("Introduce el primer ángulo (en grados): "))
+angulo2 = float(input("Introduce el segundo ángulo (en grados): "))
+angulo3 = float(input("Introduce el tercer ángulo (en grados): "))
 
-# Inicializar el costo
-costo_total = 0
-
-# Calcular el costo basado en las tarifas progresivas
-if horas <= 1:
-    costo_total = 5  # Primera hora
-elif 2 <= horas <= 4:
-    costo_total = 5 + (horas - 1) * 4  # Primera hora + 2 a 4 horas
+# Verificar si la suma de los ángulos es 180°
+if angulo1 + angulo2 + angulo3 != 180:
+    print("Los ángulos no forman un triángulo válido. La suma de los ángulos debe ser 180°.")
 else:
-    costo_total = 5 + 3 * 4 + (horas - 4) * 3  # Primera hora + 2 a 4 horas + más de 4 horas
-
-# Mostrar el costo total
-print(f"El costo total de estacionamiento es: ${costo_total}")
+    # Clasificación según los ángulos
+    if angulo1 == 90 or angulo2 == 90 or angulo3 == 90:
+        print("El triángulo es Rectángulo.")
+    elif angulo1 > 90 or angulo2 > 90 or angulo3 > 90:
+        print("El triángulo es Obtuso.")
+    else:
+        print("El triángulo es Agudo.")
