@@ -1,28 +1,31 @@
-#Ejercicio 5: Días de la semana
-#Escribe un programa que, dado un número del 1 al 7, imprima el día correspondiente de la
-#semana usando match .
-
+#Ejercicio 6: Juego de adivinanza de números
+#Escribe un programa que implemente un juego de adivinanza de números.
 #Enunciado:
-#Solicita al usuario un número del 1 al 7 y muestra el día de la semana correspondiente (1 = Lunes, 7 = Domingo).
+#El programa genera un número aleatorio entre 1 y 10. El usuario debe adivinar el número, y el
+#programa indica si el número ingresado es mayor, menor o igual al número generado.
 
-# Solicitar al usuario un número del 1 al 7
-numero = int(input("Introduce un número del 1 al 7: "))
+import random
 
-# Usar match para determinar el día de la semana
-match numero:
-    case 1:
-        print("Lunes")
-    case 2:
-        print("Martes")
-    case 3:
-        print("Miércoles")
-    case 4:
-        print("Jueves")
-    case 5:
-        print("Viernes")
-    case 6:
-        print("Sábado")
-    case 7:
-        print("Domingo")
-    case _:
-        print("Número inválido, por favor ingresa un número entre 1 y 7.")
+# Generar un número aleatorio entre 1 y 10
+numero_aleatorio = random.randint(1, 10)
+
+# Variable para controlar si el usuario adivinó correctamente
+adivinado = False
+
+# Iniciar el juego
+print("¡Bienvenido al juego de adivinanza de números!")
+print("Estoy pensando en un número entre 1 y 10. ¡Intenta adivinarlo!")
+
+# Bucle hasta que el usuario adivine el número
+while not adivinado:
+    # Solicitar al usuario que ingrese un número
+    intento = int(input("Introduce tu número: "))
+    
+    # Comparar el intento del usuario con el número aleatorio
+    if intento < numero_aleatorio:
+        print("El número es mayor. Intenta de nuevo.")
+    elif intento > numero_aleatorio:
+        print("El número es menor. Intenta de nuevo.")
+    else:
+        print(f"¡Felicidades! Has adivinado el número {numero_aleatorio}.")
+        adivinado = True
