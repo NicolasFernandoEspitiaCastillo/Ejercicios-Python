@@ -1,23 +1,27 @@
-#Ejercicio 11: Conversión de temperaturas
-#Escribe un programa que convierta grados Celsius a Fahrenheit o Fahrenheit a Celsius usando
-#match .
+#Ejercicio 12: Calculadora de IMC (Índice de Masa Corporal)
+#Escribe un programa que calcule el IMC y determine el estado de peso.
 #Enunciado:
-#Solicita al usuario que ingrese una temperatura y una escala (C o F). Convierte la temperatura a la
-#escala opuesta usando match .
+#Solicita al usuario su peso (en kg) y su altura (en metros). Calcula el IMC y clasifícalo en bajo peso
+#(<18.5), peso normal (18.5-24.9), sobrepeso (25-29.9), o obesidad (>=30).
 
-# Solicitar la temperatura y la escala al usuario
-temperatura = float(input("Introduce la temperatura: "))
-escala = input("Introduce la escala (C para Celsius, F para Fahrenheit): ").upper()
 
-# Usar match para realizar la conversión según la escala proporcionada
-match escala:
-    case 'C':
-        # Convertir de Celsius a Fahrenheit
-        fahrenheit = (temperatura * 9/5) + 32
-        print(f"{temperatura} grados Celsius equivalen a {fahrenheit} grados Fahrenheit.")
-    case 'F':
-        # Convertir de Fahrenheit a Celsius
-        celsius = (temperatura - 32) * 5/9
-        print(f"{temperatura} grados Fahrenheit equivalen a {celsius} grados Celsius.")
-    case _:
-        print("Escala no válida. Por favor, ingresa 'C' para Celsius o 'F' para Fahrenheit.")
+
+# Solicitar el peso y la altura del usuario
+peso = float(input("Introduce tu peso en kg: "))
+altura = float(input("Introduce tu altura en metros: "))
+
+# Calcular el IMC
+imc = peso / (altura ** 2)
+
+# Clasificar el IMC
+if imc < 18.5:
+    estado = "Bajo peso"
+elif 18.5 <= imc <= 24.9:
+    estado = "Peso normal"
+elif 25 <= imc <= 29.9:
+    estado = "Sobrepeso"
+else:
+    estado = "Obesidad"
+
+# Mostrar el IMC y el estado de peso
+print(f"Tu IMC es {imc:.2f}, lo que indica que tienes {estado}.")
